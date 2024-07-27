@@ -1,0 +1,150 @@
+.scroll-list{
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar{
+    height:0.5rem;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: #FFDF6E;
+    border-radius: 0.75rem;
+  }
+}
+.hours-weather__container{
+  position: relative;
+
+  &:before{
+    content:'';
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    top:3px;
+    left:0;
+    z-index: 4;
+
+    background:rgb(255 223 110/0.8)
+  }
+}
+
+.wind{
+  position: relative;
+
+  &:before{
+    content:'';
+    position: absolute;
+
+    top:7px;
+    left:7px;
+
+    width: 90%;
+    height: 90%;
+
+    border: 5px solid white;
+    border-radius:9999px;
+    z-index:3;
+   }
+  &__name{
+    &:before{
+      content:'';
+      position: absolute;
+
+      width:7.6rem;
+      height:2px;
+
+      top:63.5px;
+      left:5px;
+
+      rotate:90deg;
+      background:none;
+
+      border-left:.75rem solid white;
+      border-right:.75rem solid white;
+    }
+    &:after{
+      content:'';
+      position: absolute;
+
+      width:7.6rem;
+      height:3px;
+
+      top:50%;
+      left:4px;
+
+      background:none;
+
+      border-left:.75rem solid white;
+      border-right:.75rem solid white;
+    }
+  }
+}
+.wind__arrow{
+  position: absolute;
+
+  top:63px;
+  left:145px;
+
+  transform-origin: center;
+  transition: rotate 200ms ease-in-out;
+}
+.pressure{
+  &:before{
+    content:url(../assets/barometer_scale.svg);
+    position: absolute;
+
+    top:5px;
+    left:4px;
+
+  }
+  &__num{
+    text-shadow: 0 2px 8px #2f1f34;
+  }
+  &__arrow{
+    position: absolute;
+
+    top:30px;
+    left:56.5px;
+
+    transform-origin: center;
+    transition: rotate 200ms ease-in-out;
+  }
+}
+.uv{
+  &__line{
+    background: linear-gradient(90deg, #00ff0a 0%, #faff00 26%, #f90 52.5%, #f00 76%, #ff00b8 100%);
+  }
+}
+
+.sun{
+  &:before{
+    content: '';
+    position: absolute;
+
+    width: 0.75rem;
+    height: 0.75rem;
+
+    bottom:2.85rem;
+    left:7.75rem;
+
+    background: white;
+    border-radius: 9999px;
+    z-index: 6;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+
+    width: 0.75rem;
+    height: 0.75rem;
+
+    bottom:1.75rem;
+    right:6.25rem;
+
+    background: white;
+    border-radius: 9999px;
+    z-index: 6;
+  }
+}
+.flipped{
+  transform: rotate(180deg);
+}
