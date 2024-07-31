@@ -115,7 +115,7 @@
   }
 }
 
-.sun{
+.additional-weather__sun{
   &:before{
     content: '';
     position: absolute;
@@ -138,7 +138,7 @@
     height: 0.75rem;
 
     bottom:1.75rem;
-    right:6.25rem;
+    right:5rem;
 
     background: white;
     border-radius: 9999px;

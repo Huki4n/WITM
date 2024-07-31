@@ -61,6 +61,7 @@ export default function MainWeatherInfo(weatherProps){
   }, []);
 
 
+
   return <section className={'weather__container row-start-3 row-end-4 self-start'}>
     <div className="weather grid grid-cols-[auto_1fr] grid-rows-[28px_minmax(auto,1fr)_28px} gap-x-[3.75rem] gap-y-5">
       <span className={'weather__timezone text-2xl text-white/[.5]'}>GMT +3</span>

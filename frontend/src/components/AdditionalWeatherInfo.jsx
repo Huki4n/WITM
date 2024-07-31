@@ -2,11 +2,11 @@ import sun_line from '../assets/sun_line.svg'
 import wind_arrow from '../assets/wind_arrow.svg'
 import pressure_arrow from '../assets/pressure_arrow.svg'
 
-const AdditionalWeatherWind = ({angel}) => {
+const AdditionalWeatherWind = ({angel,windSpeed}) => {
   return <>
     <div className={'additional-weather__wind wind flex flex-col bg-black/[.50] rounded-full backdrop-blur-[20px] px-[43px] py-[18px] my-2'}>
       <span className={'wind__name text-sm text-white/[.5]'}>Wind</span>
-      <span className="wind__speed text-5xl">6</span>
+      <span className="wind__speed text-5xl">{windSpeed}</span>
       <span className="wind__unit text-base">Km/h</span>
     </div>
     <img
@@ -32,7 +32,7 @@ const AdditionalWeatherUv = ({uvIndex}) => {
   return <div className="additional-weather__uv uv flex flex-col items-start gap-1">
     <span className="uv__name text-base">UV-Index</span>
     <div className={'flex items-end gap-[14px]'}>
-      <span className="uv__num text-4xl">5</span>
+      <span className="uv__num text-4xl">{uvIndex}</span>
       <span className={'uv__indicator text-[22px]'}>{'Normal'}</span>
     </div>
     <div className="uv__line w-[115px] h-[5px] mt-[17px] rounded-xl relative">
@@ -42,7 +42,7 @@ const AdditionalWeatherUv = ({uvIndex}) => {
 }
 
 const AdditionalWeatherSun = ({sunrise,sunset}) => {
-  return <div className="additional-weather__sun sun relative flex flex-grow justify-between">
+  return <div className="additional-weather__sun relative flex flex-grow justify-between">
     <div className="sunrise flex flex-col items-start gap-1">
       <span className="sunrise text-base">Sunrise</span>
       <span className="sunrise__time text-4xl">{sunrise}</span>
@@ -61,10 +61,10 @@ const AdditionalWeatherSun = ({sunrise,sunset}) => {
 export default function AdditionalWeatherInfo() {
   return <section className={'additional-weather__container row-start-2 row-end-3 col-start-2 col-end-3 '}>
     <div className={'additional-weather relative flex gap-[30px] text-white z-0 '}>
-      <AdditionalWeatherPressure pressure={750}/>
-      <AdditionalWeatherWind angel={0}/>
+      <AdditionalWeatherPressure pressure={780}/>
+      <AdditionalWeatherWind angel={160} windSpeed={12}/>
       <div className={'additional-weather__uv-sun bg-black/[.50] rounded-xl backdrop-blur-[20px] flex-grow flex gap-[62px] pt-[9px] pl-[28px] pr-[50px] pb-[34px] h-36'}>
-        <AdditionalWeatherUv uvIndex={5}/>
+        <AdditionalWeatherUv uvIndex={8}/>
         <AdditionalWeatherSun sunrise={'05:21'} sunset={'21:21'}/>
       </div>
     </div>

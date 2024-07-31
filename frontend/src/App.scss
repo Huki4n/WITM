@@ -1,0 +1,199 @@
+.App {
+  text-align: center;
+
+  position: relative;
+
+  height: 100%;
+  z-index: 0;
+
+  transition: background 2s ease-in-out;
+}
+
+.preload {
+  width:1px;
+  height:1px;
+  background-image:
+          url('./assets/background_mountain/sunrise/upper_layer.svg'),
+          url('./assets/background_mountain/sunrise/mid_layer.svg'),
+          url('./assets/background_mountain/sunrise/lower_layer.svg'),
+          url('./assets/background_mountain/morning/upper_layer.svg'),
+          url('./assets/background_mountain/morning/mid_layer.svg'),
+          url('./assets/background_mountain/morning/lower_layer.svg'),
+          url('./assets/background_mountain/midday/upper_layer.svg'),
+          url('./assets/background_mountain/midday/mid_layer.svg'),
+          url('./assets/background_mountain/midday/lower_layer.svg'),
+          url('./assets/background_mountain/afternoon/upper_layer.svg'),
+          url('./assets/background_mountain/afternoon/mid_layer.svg'),
+          url('./assets/background_mountain/afternoon/lower_layer.svg'),
+          url('./assets/background_mountain/sunset/upper_layer.svg'),
+          url('./assets/background_mountain/sunset/mid_layer.svg'),
+          url('./assets/background_mountain/sunset/lower_layer.svg'),
+          url('./assets/background_mountain/night/upper_layer.svg'),
+          url('./assets/background_mountain/night/mid_layer.svg'),
+          url('./assets/background_mountain/night/lower_layer.svg');
+  background-position:-1000px -1000px;
+  position:absolute;
+  opacity:0;
+  visibility: hidden;
+}
+
+.background-upper{
+  position: absolute;
+  bottom: 0;
+
+  z-index: 3;
+  height:629px;
+  width: 1920px;
+
+  transition: background 1s linear;
+
+}
+.background-mid{
+
+  height: 809px;
+  width: 1920px;
+
+  position: absolute;
+  z-index:2;
+  left:0;
+  bottom:180px;
+
+  transition: background 1s linear;
+}
+.background-lower{
+
+  height: 489px;
+  width: 1920px;
+
+  position: absolute;
+  z-index:1;
+  left:0;
+  bottom:350px;
+
+  transition: background 1s linear;
+}
+.trajectory{
+  position: absolute;
+
+  top: 76px;
+  left:-17%;
+  z-index:0;
+
+  border: 5px solid white;
+
+  rotate:-5deg;
+  transform-origin: center;
+
+  &.animate-sun{
+    animation-name: circleSun;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+  }
+  &.animate-lune{
+    animation-name: circleLune;
+    animation-duration: 38s;
+    animation-timing-function: linear;
+  }
+
+  &__sun{
+    position: absolute;
+
+    width:249px;
+    height:249px;
+
+    top: 300px; // 342px
+    left:220px; //-101px
+    z-index:0;
+
+    background: white;
+    border-radius: 50%;
+
+    &.animate{
+      animation-name: changeColor;
+      animation-duration: 21s;
+      animation-timing-function: linear;
+    }
+  }
+  &__lune{
+    position: absolute;
+
+    width: 168px;
+    height: 179px;
+
+    top: 460px; // 342px
+    left: 2300px; //-101px
+    z-index: 0;
+
+    background: url('./assets/moon.svg');
+
+    &.animate{
+      animation-name: rotateMoon;
+      animation-duration: 45s;
+      animation-timing-function: linear;
+    }
+  }
+}
+@keyframes circleSun {
+  0%{ rotate: -5deg }
+  100%{ rotate:100deg }
+}
+@keyframes changeColor {
+  0%{ background: white }
+  30%{ background: #FFF2C5 }
+  50%{ background: #FFE99C }
+  75%{ background: #FFDF6E }
+  85%{ background: #FF7F3F }
+  100%{background: #FF7F3F}
+}
+@keyframes circleLune {
+  0%{ rotate: 255deg }
+  100%{ rotate: 355deg }
+}
+@keyframes rotateMoon {
+  0%{ rotate: 120deg}
+  25%{ rotate: 90deg }
+  50%{ rotate: 60deg }
+  75%{ rotate: 30deg }
+  100%{rotate: 0deg}
+}
+.stars{
+  transition: opacity 2s ease-in-out;
+
+  .star{
+    position: absolute;
+    z-index: -1;
+
+    width:30px;
+    height: 30px;
+
+    background:url('./assets/star.svg')   no-repeat;
+  }
+  .star:nth-child(1){
+    top:400px;
+    left: 85px;
+  }
+  .star:nth-child(2){
+    top:152px;
+    left: 485px;
+    rotate:15deg;
+  }
+  .star:nth-child(3){
+    top:60px;
+    left: 950px;
+    rotate:35deg;
+  }
+  .star:nth-child(4){
+    top: 152px;
+    left: 1445px;
+      rotate: 55deg;
+  }
+  .star:nth-child(5){
+    top:400px;
+    left: 1845px;
+    rotate: 68deg;
+  }
+}
+.input-search{
+  background:none;
+  font-family: 'Kodchasan',sans-serif;
+}
