@@ -1,6 +1,6 @@
-import cloudy from '../assets/weather_icons/cloudy.svg'
+import cloudy from '../../assets/weather_icons/cloudy.svg'
 
-export default function WeatherCharacteristic({date, weather_icon,temp}){
+export default function WeatherTimeBlock({date, weather_icon,temp}){
   return <>
     <li className={'weather__characteristic inline-flex flex-col justify-start gap-5 text-white'}>
       <span className={'weather__characteristic__calendar text-2xl w-[63px]'}>{date.substring(0, 3)}</span>

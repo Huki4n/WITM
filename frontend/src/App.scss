@@ -9,69 +9,6 @@
   transition: background 2s ease-in-out;
 }
 
-.preload {
-  width:1px;
-  height:1px;
-  background-image:
-          url('./assets/background_mountain/sunrise/upper_layer.svg'),
-          url('./assets/background_mountain/sunrise/mid_layer.svg'),
-          url('./assets/background_mountain/sunrise/lower_layer.svg'),
-          url('./assets/background_mountain/morning/upper_layer.svg'),
-          url('./assets/background_mountain/morning/mid_layer.svg'),
-          url('./assets/background_mountain/morning/lower_layer.svg'),
-          url('./assets/background_mountain/midday/upper_layer.svg'),
-          url('./assets/background_mountain/midday/mid_layer.svg'),
-          url('./assets/background_mountain/midday/lower_layer.svg'),
-          url('./assets/background_mountain/afternoon/upper_layer.svg'),
-          url('./assets/background_mountain/afternoon/mid_layer.svg'),
-          url('./assets/background_mountain/afternoon/lower_layer.svg'),
-          url('./assets/background_mountain/sunset/upper_layer.svg'),
-          url('./assets/background_mountain/sunset/mid_layer.svg'),
-          url('./assets/background_mountain/sunset/lower_layer.svg'),
-          url('./assets/background_mountain/night/upper_layer.svg'),
-          url('./assets/background_mountain/night/mid_layer.svg'),
-          url('./assets/background_mountain/night/lower_layer.svg');
-  background-position:-1000px -1000px;
-  position:absolute;
-  opacity:0;
-  visibility: hidden;
-}
-
-.background-upper{
-  position: absolute;
-  bottom: 0;
-
-  z-index: 3;
-  height:629px;
-  width: 1920px;
-
-  transition: background 1s linear;
-
-}
-.background-mid{
-
-  height: 809px;
-  width: 1920px;
-
-  position: absolute;
-  z-index:2;
-  left:0;
-  bottom:180px;
-
-  transition: background 1s linear;
-}
-.background-lower{
-
-  height: 489px;
-  width: 1920px;
-
-  position: absolute;
-  z-index:1;
-  left:0;
-  bottom:350px;
-
-  transition: background 1s linear;
-}
 .trajectory{
   position: absolute;
 
@@ -124,7 +61,7 @@
     left: 2300px; //-101px
     z-index: 0;
 
-    background: url('./assets/moon.svg');
+    background: url('assets/day_animation/moon.svg');
 
     &.animate{
       animation-name: rotateMoon;
@@ -166,7 +103,7 @@
     width:30px;
     height: 30px;
 
-    background:url('./assets/star.svg')   no-repeat;
+    background:url('assets/day_animation/star.svg')   no-repeat;
   }
   .star:nth-child(1){
     top:400px;
@@ -192,8 +129,4 @@
     left: 1845px;
     rotate: 68deg;
   }
-}
-.input-search{
-  background:none;
-  font-family: 'Kodchasan',sans-serif;
 }

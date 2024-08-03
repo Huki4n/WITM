@@ -1,15 +1,9 @@
-import WeatherCharacteristic from "./Weather_Characteristic";
+import WeatherCharacteristic from "../WeatherTimeBlock/WeatherTimeBlock";
+import {memo} from "react";
+import allDays from "../../constants/getDays/getDay";
 
-export default function WeekWeather(){
-  const allDays = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday'
-  ]
+const WeatherWeek = memo(() => {
+
 
    return <div className={'week-weather-container row-start-3 row-end-4 col-start-2 self-center'}>
     <ul className="week-weather flex gap-[66px] bg-black/[.50] rounded-xl backdrop-blur-[20px] px-[4.5rem] py-[1.75rem] ">
@@ -22,4 +16,6 @@ export default function WeekWeather(){
       <WeatherCharacteristic date={allDays[6]} weather_icon={''} temp={'24'}/>
     </ul>
    </div>
- }
+});
+
+export default WeatherWeek;

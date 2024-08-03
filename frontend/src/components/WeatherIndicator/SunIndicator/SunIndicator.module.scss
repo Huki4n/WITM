@@ -1,0 +1,30 @@
+.sun{
+  &:before{
+    content: '';
+    position: absolute;
+
+    width: 0.75rem;
+    height: 0.75rem;
+
+    bottom:2.85rem;
+    left:7.75rem;
+
+    background: white;
+    border-radius: 9999px;
+    z-index: 6;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+
+    width: 0.75rem;
+    height: 0.75rem;
+
+    bottom:1.75rem;
+    right:5.9rem;
+
+    background: white;
+    border-radius: 9999px;
+    z-index: 6;
+  }
+}

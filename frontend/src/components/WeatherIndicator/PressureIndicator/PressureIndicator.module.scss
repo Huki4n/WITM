@@ -1,0 +1,22 @@
+.pressure{
+  &:before{
+    content:url(../../../assets/barometer_scale.svg);
+    position: absolute;
+
+    top:5px;
+    left:4px;
+
+  }
+  &Num{
+    text-shadow: 0 2px 8px #2f1f34;
+  }
+  &Arrow{
+    position: absolute;
+
+    top:30px;
+    left:91.5px;
+
+    transform-origin: center;
+    transition: rotate 200ms ease-in-out;
+  }
+}

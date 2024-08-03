@@ -1,15 +1,18 @@
 import React, {useContext, useEffect, useState} from 'react';
 
-import MainWeatherInfo from "./components/Main_Weather_Info";
-import WeekWeather from "./components/Week_Weather";
-import HoursWeather from "./components/Hours_Weather";
-import AdditionalWeatherInfo from "./components/AdditionalWeatherInfo";
+import MainWeatherInfo from "./components/WeatherInfo/WeatherInfo";
+import WeekWeather from "./components/WeatherWeek/WeatherWeek";
+import HoursWeather from "./components/HoursWeather/HoursWeather";
+import WeatherIndicators from "./components/WeatherIndicator/WeatherIndicators";
 
 import './App.scss';
 import './styles/style.scss'
 
-import backgroundColor from './components/Variables/BackgroundMountainColor'
-import WeatherLocation from "./components/WeatherLocation";
+import getBackgrounds from './constants/getBackgrounds/getBackgrounds'
+import WeatherLocation from "./components/WeatherLocation/WeatherLocation";
+import checkTimeOfDay from "./helpers/getTimeOfDay";
+import Background from "./components/Background/Background";
+import Preload from "./components/Preload/Preload";
 
 
 function App() {
@@ -17,8 +20,6 @@ function App() {
     status: 'loading',
     repos: {},
   });
-  const [address, setAddress] = useState()
-
 
   useEffect(() => {
     let weather = fetch('/api')
@@ -28,17 +29,7 @@ function App() {
         })
         .catch(() => console.log('Error write weather data'))
 
-    let adrs = fetch(`https://geocode-maps.yandex.ru/1.x/?apikey=${process.env.REACT_APP_ADRRESS_API_KEY}&geocode=35.446871,54.574113&format=json`)
-        .then((response) => response.json())
-        .then((response) => {
-          setAddress(response);
-        })
-        .catch(() => console.log('Error write address'))
   }, []);
-
-  const click = () => {
-    console.log(weatherData.repos)
-  }
 
   const [date,setDate] = useState(new Date())
   const [animationTrajectory,setAnimationTrajectory] = useState(false);
@@ -78,40 +69,12 @@ function App() {
     },500);
   }, [date]);
 
+  const background = useContext(getBackgrounds)
 
-  const checkTimeOfDay = () => {
-    if (date.getSeconds() >= 5 && date.getSeconds() <= 8){
-      return 'sunrise'
-    } else if (date.getSeconds() >= 9 && date.getSeconds() <= 11){
-      return 'morning'
-    } else if (date.getSeconds() >= 12 && date.getSeconds() <= 15){
-      return 'midday'
-    } else if (date.getSeconds() >= 16 && date.getSeconds() <= 19){
-      return 'afternoon'
-    } else if (date.getSeconds() >= 20 && date.getSeconds() <= 22){
-      return 'sunset'
-    } else{
-      return 'night'
-    }
-  }
-
-
-  const background = useContext(backgroundColor)
-
-  return <div style={{background: `${background[checkTimeOfDay()].bg}`}}
-      className={'App'}>
-    <div className="preload"></div>
-    <div  style={{
-      background: `url(${background[checkTimeOfDay()].upper})`
-    }} className={`background-upper`}></div>
-    <div style={{
-      background: `url(${background[checkTimeOfDay()].mid})`
-    }} className={'background-mid'}></div>
-    <div style={{
-      background: `url(${background[checkTimeOfDay()].lower})`
-    }} className={'background-lower'}></div>
-    <div
-        className={'weather__city text-[154px] mix-blend-soft-light text-black absolute left-24 top-6 tracking-[4.5rem] z-[2]'}>
+  return <div style={{background: `${background[checkTimeOfDay()].bg}`}} className={'App'}>
+    <Preload/>
+    <Background/>
+    <div className={'weather__city text-[154px] mix-blend-soft-light text-black absolute left-24 top-6 tracking-[4.5rem] z-[2]'}>
       WASHINGTON
     </div>
     <div
@@ -139,7 +102,7 @@ function App() {
                        minTemperature={weatherData.repos?.fact?.temp}
                        weatherType={weatherData.repos?.fact?.condition}
       />
-      <AdditionalWeatherInfo/>
+      <WeatherIndicators/>
       <WeekWeather/>
       <HoursWeather/>
     </div>

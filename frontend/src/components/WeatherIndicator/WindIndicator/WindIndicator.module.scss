@@ -1,0 +1,60 @@
+.wind{
+  position: relative;
+
+  &:before{
+    content:'';
+    position: absolute;
+
+    top:7px;
+    left:7px;
+
+    width: 90%;
+    height: 90%;
+
+    border: 5px solid white;
+    border-radius:9999px;
+    z-index:3;
+  }
+  &Name{
+    &:before{
+      content:'';
+      position: absolute;
+
+      width:7.6rem;
+      height:2px;
+
+      top:63.5px;
+      left:5px;
+
+      rotate:90deg;
+      background:none;
+
+      border-left:.75rem solid white;
+      border-right:.75rem solid white;
+    }
+    &:after{
+      content:'';
+      position: absolute;
+
+      width:7.6rem;
+      height:3px;
+
+      top:50%;
+      left:4px;
+
+      background:none;
+
+      border-left:.75rem solid white;
+      border-right:.75rem solid white;
+    }
+  }
+  &Arrow{
+    position: absolute;
+
+    top:63px;
+    left:180px;
+
+    transform-origin: center;
+    transition: rotate 200ms ease-in-out;
+  }
+}
