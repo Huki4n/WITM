@@ -4,63 +4,15 @@ import search from "../../assets/search.svg";
 import { memo, useEffect, useState } from "react";
 import classNames from "classnames";
 import styles from "./WeatherLocation.module.scss";
-import stylesItem from "./CitiesList/CitiesListItem/CitiesListItem.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetCurrentWeatherQuery } from "../../services/OpenWeatherApi";
 import { savedCitiesSlice } from "../../store/savedCitiesSlice/savedCitiesSlice";
 import { currentWeatherSlice } from "../../store/currentWeatherSlice/currentWeatherSlice";
+import CitiesList from "./CitiesList/CitiesList";
 
 /* TODO:
  *   Подключить библиотеку для уникальных id
  * */
-
-const CitiesListItem = ({ children, id, activeIndex, setActiveIndex }) => {
-  const dispatch = useDispatch();
-  const savedCityCoord = useSelector(
-    (state) => state.savedCities.savedCitiesList[id],
-  );
-
-  const { data } = useGetCurrentWeatherQuery({
-    lat: savedCityCoord?.coord.lat,
-    lon: savedCityCoord?.coord.lon,
-  });
-
-  const handleClick = () => {
-    setActiveIndex(id);
-    dispatch(currentWeatherSlice.actions.setWeather(data));
-  };
-
-  return (
-    <li
-      key={id}
-      className={classNames(
-        stylesItem.cityHover,
-        "text-xl opacity-70 cursor-pointer",
-        activeIndex === id ? stylesItem.active : "",
-      )}
-      onClick={handleClick}
-    >
-      {children}
-    </li>
-  );
-};
-
-const CitiesList = ({ cities, ids, activeIndex, setActiveIndex }) => {
-  return (
-    <ul className="flex justify-between text-white">
-      {cities.map((city, index) => (
-        <CitiesListItem
-          key={ids[index]}
-          id={ids[index]}
-          activeIndex={activeIndex}
-          setActiveIndex={setActiveIndex}
-        >
-          {city}
-        </CitiesListItem>
-      ))}
-    </ul>
-  );
-};
 
 const FormSearchCity = ({ city, setCity }) => {
   const [coordinates, setCoordinates] = useState([]);
