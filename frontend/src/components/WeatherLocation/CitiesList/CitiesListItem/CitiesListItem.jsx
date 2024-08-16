@@ -24,7 +24,7 @@ const CitiesListItem = ({ children, id, activeIndex, setActiveIndex }) => {
     <li
       key={id}
       className={classNames(
-        stylesItem.cityHover,
+        styles.cityHover,
         "text-xl opacity-70 cursor-pointer",
         activeIndex === id ? styles.active : "",
       )}
