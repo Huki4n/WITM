@@ -1,0 +1,35 @@
+.lune {
+  position: absolute;
+
+  width: 168px;
+  height: 179px;
+
+  top: 460px; // 342px
+  left: 2300px; //-101px
+  z-index: 0;
+
+  background: url("../../../../assets/day_animation/moon.svg");
+
+  &Animate {
+    animation-name: rotateMoon;
+    animation-duration: 45s;
+    animation-timing-function: linear;
+  }
+}
+@keyframes rotateMoon {
+  0% {
+    rotate: 120deg;
+  }
+  25% {
+    rotate: 90deg;
+  }
+  50% {
+    rotate: 60deg;
+  }
+  75% {
+    rotate: 30deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}

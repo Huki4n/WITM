@@ -1,0 +1,21 @@
+
+.cityHover{
+  position: relative;
+
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  transition: background-size .2s;
+
+  &:hover{
+    background-size: 98% 2px;
+  }
+}
+.active{
+  opacity: 1;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 98% 2px;
+}

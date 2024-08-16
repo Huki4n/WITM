@@ -1,0 +1,42 @@
+.trajectory {
+  position: absolute;
+
+  top: 76px;
+  left: -17%;
+  z-index: 0;
+
+  border: 5px solid white;
+
+  rotate: -5deg;
+  transform-origin: center;
+
+  &AnimateSun {
+    animation-name: circleSun;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+  }
+
+  &AnimateLune {
+    animation-name: circleLune;
+    animation-duration: 38s;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes circleSun {
+  0% {
+    rotate: -5deg;
+  }
+  100% {
+    rotate: 100deg;
+  }
+}
+
+@keyframes circleLune {
+  0% {
+    rotate: 255deg;
+  }
+  100% {
+    rotate: 355deg;
+  }
+}

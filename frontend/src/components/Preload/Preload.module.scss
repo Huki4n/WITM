@@ -1,27 +1,26 @@
 .preload {
-  width:1px;
-  height:1px;
-  background-image:
-          url('../../assets/background_mountain/sunrise/upper_layer.svg'),
-          url('../../assets/background_mountain/sunrise/mid_layer.svg'),
-          url('../../assets/background_mountain/sunrise/lower_layer.svg'),
-          url('../../assets/background_mountain/morning/upper_layer.svg'),
-          url('../../assets/background_mountain/morning/mid_layer.svg'),
-          url('../../assets/background_mountain/morning/lower_layer.svg'),
-          url('../../assets/background_mountain/midday/upper_layer.svg'),
-          url('../../assets/background_mountain/midday/mid_layer.svg'),
-          url('../../assets/background_mountain/midday/lower_layer.svg'),
-          url('../../assets/background_mountain/afternoon/upper_layer.svg'),
-          url('../../assets/background_mountain/afternoon/mid_layer.svg'),
-          url('../../assets/background_mountain/afternoon/lower_layer.svg'),
-          url('../../assets/background_mountain/sunset/upper_layer.svg'),
-          url('../../assets/background_mountain/sunset/mid_layer.svg'),
-          url('../../assets/background_mountain/sunset/lower_layer.svg'),
-          url('../../assets/background_mountain/night/upper_layer.svg'),
-          url('../../assets/background_mountain/night/mid_layer.svg'),
-          url('../../assets/background_mountain/night/lower_layer.svg');
-  background-position:-1000px -1000px;
-  position:absolute;
-  opacity:0;
+  width: 1px;
+  height: 1px;
+  background-image: url("../../assets/background_mountain/sunrise/upper_layer.svg"),
+    url("../../assets/background_mountain/sunrise/mid_layer.svg"),
+    url("../../assets/background_mountain/sunrise/lower_layer.svg"),
+    url("../../assets/background_mountain/morning/upper_layer.svg"),
+    url("../../assets/background_mountain/morning/mid_layer.svg"),
+    url("../../assets/background_mountain/morning/lower_layer.svg"),
+    url("../../assets/background_mountain/midday/upper_layer.svg"),
+    url("../../assets/background_mountain/midday/mid_layer.svg"),
+    url("../../assets/background_mountain/midday/lower_layer.svg"),
+    url("../../assets/background_mountain/afternoon/upper_layer.svg"),
+    url("../../assets/background_mountain/afternoon/mid_layer.svg"),
+    url("../../assets/background_mountain/afternoon/lower_layer.svg"),
+    url("../../assets/background_mountain/sunset/upper_layer.svg"),
+    url("../../assets/background_mountain/sunset/mid_layer.svg"),
+    url("../../assets/background_mountain/sunset/lower_layer.svg"),
+    url("../../assets/background_mountain/night/upper_layer.svg"),
+    url("../../assets/background_mountain/night/mid_layer.svg"),
+    url("../../assets/background_mountain/night/lower_layer.svg");
+  background-position: -1000px -1000px;
+  position: absolute;
+  opacity: 0;
   visibility: hidden;
 }

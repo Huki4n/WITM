@@ -1,4 +1,4 @@
-.upper{
+.upper {
   position: absolute;
 
   height: 629px;
@@ -12,30 +12,30 @@
 
   transition: background 1s linear;
 }
-.mid{
+.mid {
   position: absolute;
 
   height: 809px;
   width: 100vw;
 
-  left:0;
-  bottom:180px;
-  z-index:2;
+  left: 0;
+  bottom: 180px;
+  z-index: 2;
 
   background-size: cover;
   background-repeat: no-repeat;
 
   transition: background 1s linear;
 }
-.lower{
+.lower {
   position: absolute;
 
   height: 489px;
   width: 100vw;
 
-  left:0;
-  bottom:350px;
-  z-index:1;
+  left: 0;
+  bottom: 350px;
+  z-index: 1;
 
   background-size: cover;
   background-repeat: no-repeat;

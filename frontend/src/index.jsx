@@ -1,17 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.scss';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.scss";
+import App from "./App";
 
-import {configureStore} from "@reduxjs/toolkit";
-import {useDispatch,useSelector} from 'react-redux'
+import { store } from "./store/store";
+import { Provider } from "react-redux";
 
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-      <App/>
-    </React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
 );
-
-

@@ -1,0 +1,39 @@
+.sun {
+  position: absolute;
+
+  width: 249px;
+  height: 249px;
+
+  top: 300px; // 342px
+  left: 220px; //-101px
+  z-index: 0;
+
+  background: white;
+  border-radius: 50%;
+
+  &Animate {
+    animation-name: changeColor;
+    animation-duration: 21s;
+    animation-timing-function: linear;
+  }
+}
+@keyframes changeColor {
+  0% {
+    background: white;
+  }
+  30% {
+    background: #fff2c5;
+  }
+  50% {
+    background: #ffe99c;
+  }
+  75% {
+    background: #ffdf6e;
+  }
+  85% {
+    background: #ff7f3f;
+  }
+  100% {
+    background: #ff7f3f;
+  }
+}

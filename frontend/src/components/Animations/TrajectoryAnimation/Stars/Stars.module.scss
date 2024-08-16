@@ -1,0 +1,40 @@
+.stars {
+  transition: opacity 2s ease-in-out;
+  position: absolute;
+
+  left: 0%;
+
+  .star {
+    position: absolute;
+    z-index: -1;
+
+    width: 30px;
+    height: 30px;
+
+    background: url("../../../../assets/day_animation/star.svg") no-repeat;
+  }
+  .star:nth-child(1) {
+    top: 400px;
+    left: 85px;
+  }
+  .star:nth-child(2) {
+    top: 152px;
+    left: 485px;
+    rotate: 15deg;
+  }
+  .star:nth-child(3) {
+    top: 60px;
+    left: 950px;
+    rotate: 35deg;
+  }
+  .star:nth-child(4) {
+    top: 152px;
+    left: 1445px;
+    rotate: 55deg;
+  }
+  .star:nth-child(5) {
+    top: 400px;
+    left: 1845px;
+    rotate: 68deg;
+  }
+}

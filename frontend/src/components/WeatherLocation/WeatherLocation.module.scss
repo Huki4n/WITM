@@ -1,10 +1,10 @@
-.inputSearch{
-  background:none;
-  font-family: 'Kodchasan',sans-serif;
+.inputSearch {
+  background: none;
+  font-family: "Kodchasan", sans-serif;
 }
-.savedCities{
+.savedCities {
   transition: max-height 300ms ease-in-out;
 }
-.saved:hover .savedCities{
+.saved:hover .savedCities {
   max-height: 150px;
 }
