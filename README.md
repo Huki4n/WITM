@@ -7,6 +7,10 @@ Frontend приложение для просмотра погоды.
 First, run the development server:
 
 ```bash
+сd frontend
+```
+
+```bash
 npm run dev
 # or
 yarn dev
