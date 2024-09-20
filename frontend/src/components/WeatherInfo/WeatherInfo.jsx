@@ -4,15 +4,16 @@
   weather_type: string;
 }*/
 
-import { memo, useEffect, useState } from "react";
+import { memo } from "react";
 import cloudy from "../../assets/weather_icons/cloudy.svg";
 import allMonth from "../../constants/getMonth/getMonth";
 import allDays from "../../constants/getDays/getDay";
 import getOrdinalSuffix from "../../helpers/getOrdinalSuffix";
 import { useSelector } from "react-redux";
+import useCurrentTime from "../../hooks/useCurrentTime";
 
-const WeatherInfo = memo(({ weatherProps }) => {
-  const [date, setDate] = useState(new Date());
+const WeatherInfo = memo(() => {
+  const date = useCurrentTime();
   const weather = useSelector(
     (state) => state.currentWeather.currentWeatherInfo,
   );
@@ -22,15 +23,6 @@ const WeatherInfo = memo(({ weatherProps }) => {
     day: date.getDate(),
     weekDay: allDays[date.getDay() - 1],
   };
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setDate(new Date());
-    }, 999);
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
 
   return (
     <section className={"weather__container row-start-3 row-end-4 self-start"}>
@@ -50,7 +42,7 @@ const WeatherInfo = memo(({ weatherProps }) => {
           <img
             className={"weather__icon flex flex-col"}
             src={cloudy}
-            alt={weatherProps.weatherType}
+            alt={""}
           />
         </div>
         <span
